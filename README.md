@@ -1,2 +1,2 @@
 # SegitigaCalc
-A school assignment project about calculating area of a triangle.
+Multiple school assignments in a single project
