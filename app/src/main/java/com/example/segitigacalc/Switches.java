@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class Switches extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_switches);
 
+        //Element initialization
         cardHolder = findViewById(R.id.cards);
         orderBtn = (Button) findViewById(R.id.orderBtn);
         menuInput = findViewById(R.id.menuInput);
@@ -46,19 +48,19 @@ public class Switches extends AppCompatActivity {
             int cardPadding = toPX(cardPaddingDP);
 
             //Makes new card base
-            LinearLayout card = new LinearLayout(getApplicationContext());
+            LinearLayout card = new LinearLayout(Switches.this);
             LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             cardParams.setMargins(toPX(20), 0, toPX(20), toPX(25));
 
             card.setLayoutParams(cardParams);
             card.setOrientation(LinearLayout.VERTICAL);
             card.setPadding(cardPadding, cardPadding, cardPadding, cardPadding);
-            card.setBackgroundColor(ContextCompat.getColor(getApplication(), R.color.card_bg));
+            card.setBackgroundColor(ContextCompat.getColor(Switches.this, R.color.card_bg));
 
             //Adds text content to card
-            card.addView(cardContent(getApplicationContext(), menu.getName()+" ("+menu.getId()+")", "title"));
-            card.addView(cardContent(getApplicationContext(), menu.getDescription(), "desc"));
-            card.addView(cardContent(getApplicationContext(), "Rp. "+menu.getPrice(), "price"));
+            card.addView(cardContent(Switches.this, menu.getName()+" ("+menu.getId()+")", "title"));
+            card.addView(cardContent(Switches.this, menu.getDescription(), "desc"));
+            card.addView(cardContent(Switches.this, "Rp. "+menu.getPrice(), "price"));
 
             //Adds card to main card view
             cardHolder.addView(card);
@@ -68,7 +70,55 @@ public class Switches extends AppCompatActivity {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Ordered");
+                //Empty input check
+                if (menuInput.getText().toString().isEmpty() || qtyInput.getText().toString().isEmpty()) {
+                    Toast.makeText(Switches.this, "Input tidak lengkap!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //Data processing
+                int selection = Integer.parseInt(menuInput.getText().toString());
+                int qty = Integer.parseInt(qtyInput.getText().toString());
+
+                String ordered = "";
+                int price = 0;
+                int totalPrice = 0;
+
+                switch(selection) {
+                    case 0:
+                        ordered = "Nasi goreng";
+                        price = 25000;
+                        break;
+                    case 1:
+                        ordered = "Pizza";
+                        price = 120000;
+                        break;
+                    case 2:
+                        ordered = "Burger";
+                        price = 75000;
+                        break;
+                    case 3:
+                        ordered = "Mac n' Cheese";
+                        price = 45000;
+                        break;
+                    case 4:
+                        ordered = "Mie goreng";
+                        price = 25000;
+                        break;
+                    default:
+                        break;
+                }
+
+                //Data output
+                if (!ordered.isEmpty() && price > 0) {
+                    Toast.makeText(Switches.this, "Ditambahkan pesanan "+ordered, Toast.LENGTH_SHORT).show();
+
+                    totalPrice = price * qty;
+                    System.out.println(totalPrice);
+                }else {
+                    Toast.makeText(Switches.this, "Sebuah Error telah terjadi", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
@@ -88,7 +138,7 @@ public class Switches extends AppCompatActivity {
 
         retView.setText(textContent);
         if (type == "title" || type == "desc") retView.setTextColor(Color.BLACK);
-        retView.setTextSize(spToPX(type == "title" ? 20 : 15));
+        retView.setTextSize(type == "title" ? 20 : 15);
         if (type == "title") retView.setTypeface(retView.getTypeface(), Typeface.BOLD);
         if (type == "price") retView.setTypeface(retView.getTypeface(), Typeface.ITALIC);
 

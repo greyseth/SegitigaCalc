@@ -25,39 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/card_bg"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginBottom="25dp"
-                    android:padding="15dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:text="Food name (number)"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:text="Food description that is very long"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:text="Rp. PRICE"
-                        android:textSize="15sp"/>
-                </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
@@ -70,7 +38,7 @@
             android:id="@+id/menuInput"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:accept="number"
+            android:inputType="number"
             android:hint="Nomor menu"
             android:layout_marginEnd="50dp"
             />
@@ -78,7 +46,7 @@
             android:id="@+id/qtyInput"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:accept="number"
+            android:inputType="number"
             android:hint="Quantitas menu"
             />
     </LinearLayout>
@@ -93,7 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:background="@color/dark_blue"
+            android:layout_marginEnd="25dp"
             android:text="ORDER"/>
+
     </LinearLayout>
 
 </LinearLayout>
