@@ -70,7 +70,7 @@ public class Switches extends AppCompatActivity {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Empty input check
+                //Checks for empty input
                 if (menuInput.getText().toString().isEmpty() || qtyInput.getText().toString().isEmpty()) {
                     Toast.makeText(Switches.this, "Input tidak lengkap!", Toast.LENGTH_SHORT).show();
                     return;
