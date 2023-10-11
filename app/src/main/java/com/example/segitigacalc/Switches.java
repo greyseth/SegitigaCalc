@@ -17,12 +17,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class Switches extends AppCompatActivity {
+    //Element variables
     LinearLayout cardHolder;
+    LinearLayout dispContainer;
     Button orderBtn;
+    TextView disp;
     EditText menuInput;
     EditText qtyInput;
     
@@ -35,7 +40,9 @@ public class Switches extends AppCompatActivity {
 
         //Element initialization
         cardHolder = findViewById(R.id.cards);
+        dispContainer = (LinearLayout) findViewById(R.id.dispContainer);
         orderBtn = (Button) findViewById(R.id.orderBtn);
+        disp = (TextView) findViewById(R.id.disp);
         menuInput = findViewById(R.id.menuInput);
         qtyInput = findViewById(R.id.qtyInput);
         
@@ -58,9 +65,12 @@ public class Switches extends AppCompatActivity {
             card.setBackgroundColor(ContextCompat.getColor(Switches.this, R.color.card_bg));
 
             //Adds text content to card
+            NumberFormat formatter = NumberFormat.getInstance(Locale.ENGLISH);
+            String formattedPrice = formatter.format(Long.parseLong(String.valueOf(menu.getPrice())));
+
             card.addView(cardContent(Switches.this, menu.getName()+" ("+menu.getId()+")", "title"));
             card.addView(cardContent(Switches.this, menu.getDescription(), "desc"));
-            card.addView(cardContent(Switches.this, "Rp. "+menu.getPrice(), "price"));
+            card.addView(cardContent(Switches.this, "Rp. "+formattedPrice, "price"));
 
             //Adds card to main card view
             cardHolder.addView(card);
@@ -114,7 +124,10 @@ public class Switches extends AppCompatActivity {
                     Toast.makeText(Switches.this, "Ditambahkan pesanan "+ordered, Toast.LENGTH_SHORT).show();
 
                     totalPrice = price * qty;
-                    System.out.println(totalPrice);
+
+                    NumberFormat formatter = NumberFormat.getInstance(Locale.ENGLISH);
+                    disp.setText(qty+" "+ordered+" Rp. "+formatter.format(Long.parseLong(String.valueOf(totalPrice))));
+                    dispContainer.setVisibility(View.VISIBLE);
                 }else {
                     Toast.makeText(Switches.this, "Sebuah Error telah terjadi", Toast.LENGTH_SHORT).show();
                 }
