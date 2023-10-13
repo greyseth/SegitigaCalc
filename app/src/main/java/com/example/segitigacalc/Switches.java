@@ -127,7 +127,7 @@ public class Switches extends AppCompatActivity {
 
                     NumberFormat formatter = NumberFormat.getInstance(Locale.ENGLISH);
                     disp.setText(qty+" "+ordered+" Rp. "+formatter.format(Long.parseLong(String.valueOf(totalPrice))));
-                    dispContainer.setVisibility(View.VISIBLE);
+                    disp.setVisibility(View.VISIBLE);
                 }else {
                     Toast.makeText(Switches.this, "Sebuah Error telah terjadi", Toast.LENGTH_SHORT).show();
                 }
