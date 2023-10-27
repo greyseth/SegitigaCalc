@@ -1,8 +1,9 @@
-# Tugas Kelompok PPB
+# Tugas Kelompok PPB - Kalkulator Bangun Datar
 
-Artizar Odion Brataseta
-Pangeran Natanael Napitupulu
+Artizar Odion Brataseta  
+Pangeran Natanael Napitupulu  
 Anargya Gilland Satria
 XI RPL
 
-Tugas Switch case berada di branch "menu".
+Aplikasi ini merupakan aplikasi kalkulator untuk 4 jenis bangun datar, yaitu lingkaran, persegi, segitiga, dan layang-layang.  
+[masukin gambar source sama result pls]
