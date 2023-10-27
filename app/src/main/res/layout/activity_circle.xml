@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    tools:context=".Circle">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:id="@+id/illustration"
+            android:layout_width="175dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/circleluas"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/resultDisp"
+            android:layout_width="175dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/btn_bg_2">
+
+        <android.widget.Button
+            android:id="@+id/kelilingBtn"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:text="KELILING"
+            android:textColor="@color/text_main"
+            android:textSize="24sp" />
+        <android.widget.Button
+            android:id="@+id/luasBtn"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:background="@color/text_main"
+            android:text="LUAS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/text_main"/>
+
+    <TextView
+        android:id="@+id/formulaDisp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/circle_luas"
+        android:textAlignment="center"
+        android:textSize="42sp"
+        android:textColor="@color/btn_bg"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="r = "
+                android:textAlignment="center"
+                android:textSize="35sp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/rInput"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:textSize="25sp"
+                android:hint="jari-jari"
+                android:textColor="@color/text_main"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <android.widget.Button
+            android:id="@+id/backBtn"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="15sp"
+            android:background="@drawable/menu_btn"
+            android:text="KEMBALI"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/text_main"
+            />
+        <android.widget.Button
+            android:id="@+id/countBtn"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/menu_btn"
+            android:text="HITUNG"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/text_main"
+            />
+    </LinearLayout>
+
+</LinearLayout>

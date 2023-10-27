@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">TugasPPB</string>
+    <string name="app_name">Kalkulator Bentuk</string>
+    <string name="circle_luas"><b><i>L = π × r^2</i></b></string>
+    <string name="circle_keliling"><b><i>K =2 × π × r</i></b></string>
+    <string name="square_luas"><b><i>L = p × p</i></b></string>
+    <string name="square_keliling"><b><i>K = 4 × s</i></b></string>
+    <string name="triangle_luas"><b><i>L = a × t / 2</i></b></string>
+    <string name="triangle_keliling"><b><i>K = s1 + s2 + s3</i></b></string>
+    <string name="diamond_luas"><b><i>L = p × t / 2</i></b></string>
+    <string name="diamond_keliling"><b><i>K = 4 × s</i></b></string>
 </resources>

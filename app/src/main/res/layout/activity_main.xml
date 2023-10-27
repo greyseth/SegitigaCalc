@@ -5,6 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/app_bg"
     tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="48dp"
+        android:text="KALKULATOR BANGUN DATAR"
+        android:textColor="@color/text_main"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginBottom="48dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/circleMenu"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:onClick="GoToCircle"
+            android:background="@drawable/menu_btn"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/circlebase" />
+
+        <ImageButton
+            android:id="@+id/squareMenu"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/menu_btn"
+            android:onClick="GoToSquare"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/squarebase" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/triangleMenu"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/menu_btn"
+            android:onClick="GoToTriangle"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/trianglebase" />
+
+        <ImageButton
+            android:id="@+id/diamondMenu"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/menu_btn"
+            android:onClick="GoToDiamond"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/diamondbase" />
+    </LinearLayout>
 </LinearLayout>
