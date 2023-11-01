@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    tools:context=".info">
+
+    <TextView
+        android:layout_height="250dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="75dp"
+        android:textColor="@color/text_main"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="Kelompok PPB\nPangeran Natanael Napitupulu\nArtizar Odiion Brata Seta\nAnargya Gilland Satria"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/backicon" />
+
+</LinearLayout>

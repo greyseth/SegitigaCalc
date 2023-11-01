@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/app_bg"
+    android:onClick="GoToInfo"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="48dp"
         android:text="KALKULATOR BANGUN DATAR"
-        android:textColor="@color/text_main"
-        android:textStyle="bold"
-        android:textSize="32sp"
         android:textAlignment="center"
-        />
+        android:textColor="@color/text_main"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,9 +33,9 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="48dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:onClick="GoToCircle"
             android:background="@drawable/menu_btn"
+            android:onClick="GoToCircle"
+            android:padding="10dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/circlebase" />
 
@@ -81,4 +82,26 @@
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/diamondbase" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageButton
+            android:id="@+id/infoBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.90"
+            android:onClick="GoToInfo"
+            app:srcCompat="@drawable/infobtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

@@ -12,21 +12,24 @@
         android:theme="@style/Theme.SegitigaCalc"
         tools:targetApi="31">
         <activity
-            android:name=".Diamond"
-            android:windowSoftInputMode="adjustPan"
+            android:name=".info"
             android:exported="false" />
+        <activity
+            android:name=".Diamond"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Triangle"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Square"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Circle"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
